@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito</title>
+    <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css" >
+
+</head>
+<body>
+    
+    <nav class="navbar navbar-light bg-light">
+        <a href="/" class="navbar-brand">
+            Punto de venta
+        </a>
+    </nav>
+
+    <div class = "container">
+
+        <h3>Productos</h3>
+
+        <table>
+            <tbody>
+                <tr>
+                    <% products.forEach(function(prod){ %>
+                        <% if(count[prod.id - 1] !== 0){ %>
+                            <div class = "card col-md-4">
+                                <div class = "card-body">
+                                        <h5><%= prod.nombre %></h5>
+                                        <p><%= prod.precio %></p>
+                                        <p> Cantidad: <%= count[prod.id - 1] %></p>
+                                </div>
+                            </div>
+                        <% }; %>
+                    <% }); %>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class = "card col-md-12">
+            <h3>Total = <%= total %></h3>
+        </div>
+
+        <form action = "/pagar" method="post">
+            <div class = "card col-md-12">
+                <button id = "pagar" type = "submit" class="btn btn-primary" value="pagar" style="margin: 10px">Pagar</button>
+            </div>            
+        </form>
+
+        <form action = "/main" method="get">
+            <div class ="card col-md-12">
+                <input id = "regresar" type = "submit" class="btn btn-primary" value="Regresar" style="margin: 10px">
+            </div>
+        </form>
+
+    </div>
+    
+
+</body>
+</html>

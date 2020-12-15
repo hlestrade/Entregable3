@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar</title>
+    <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css" >
+
+</head>
+<body>
+    
+    <nav class="navbar navbar-light bg-light">
+        <a href="/" class="navbar-brand">
+            Punto de venta
+        </a>
+    </nav>
+
+    <div class = "container">
+
+        <h3>Agregar nuevo producto</h3>
+
+        <form action = "/" method="post">
+            <div class = "card col-md-12">
+                <h6>Nombre:</h6>
+                <input type="text" name="nombre">
+                <h6>Precio:</h6>
+                <input type="number" name="precio">
+            </div>
+
+            <div class ="card col-md-12">
+                <input id = "agregar" type = "submit" class="btn btn-primary" value="Agregar" style="margin: 10px">
+            </div>
+        </form>
+
+    </div>
+    
+
+</body>
+</html>

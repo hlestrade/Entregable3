@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar</title>
+    <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css" >
+
+</head>
+<body>
+    
+    <nav class="navbar navbar-light bg-light">
+        <a href="/" class="navbar-brand">
+            Punto de venta
+        </a>
+    </nav>
+
+    <div class = "container">
+
+        <h3>Eliminar producto</h3>
+
+        <form action = "/delete" method="post">
+            <div class = "card col-md-12">
+                <h6>Nombre</h6>
+                <input type="text" name="nombre">
+            </div>
+
+            <div class ="card col-md-12">
+                <input id = "eliminar" type = "submit" class="btn btn-danger" value="Eliminar" style="margin: 10px">
+            </div>
+        </form>
+
+    </div>
+    
+
+</body>
+</html>

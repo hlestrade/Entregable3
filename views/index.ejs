@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-light bg-light">
+        <a href="/" class="navbar-brand">
+            Punto de venta
+        </a>
+    </nav>
+
+    <div class="container">
+        <% if(success != ""){ %>
+            <div class="alert alert-success">
+                <strong></strong> <%= success %>
+            </div>
+        <% }; %>
+
+        <div class="row">
+            <!--Productos-->
+            <div class="card col-md-4">
+                <% products.forEach(function(prod){ %>
+                    <div class="card-body">
+                        <h5><%= prod.nombre %></h5>
+                        <p><%= prod.precio %></p>
+                        <form action="/add" method="post">
+                            <button class="btn btn-primary" type="submit" name = "add"  value="<%=prod.id%>">+</button>
+                        </form>
+                    </div>
+                <% }); %>
+            </div>
+
+            <aside class="col-sm-4">
+                <form action="/carrito" method="get">
+                    <div class="card row">
+                        <input id="carrito" type="submit" class="btn btn-primary" value="carrito" style="margin: 10px">
+                    </div>
+                </form>
+
+                <form action="/new" method="get">
+                    <div class="card row">
+                        <button class="btn - btn-primary" style="margin: 10px">Agregar</button>
+                    </div>
+                </form>
+
+                <form action="/delete" method="get">
+                    <div class="card row">
+                        <button class="btn - btn-primary" style="margin: 10px">Eliminar</button>
+                    </div>
+                </form>
+
+                <form action="/update" method="get">
+                    <div class="card row">
+                        <button class="btn - btn-primary" style="margin: 10px">Editar</button>
+                    </div>
+                </form>
+            </aside>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
